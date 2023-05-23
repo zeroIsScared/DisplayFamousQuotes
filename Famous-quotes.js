@@ -19,10 +19,9 @@ const quotes=[
 
 const button1= document.getElementById('button');
 
-function  displayQuote (){
+function displayQuote(){
 
-const randomNumber= Math.floor(Math.random()*quotes.length);
-const div= document.getElementById('1');
+ const randomNumber= Math.floor(Math.random()*quotes.length);
 
  if( document.querySelector("h2") && document.querySelector("h6")){   
 
@@ -34,7 +33,10 @@ const div= document.getElementById('1');
     quoteH2.textContent= quotes[randomNumber].quote;
     const authorH6= document.createElement("h6");
     authorH6.textContent= quotes[randomNumber].author;
-
+    const div = document.createElement('div');
+    const body = document.body;
+    div.setAttribute('id','1'); 
+    body.insertAdjacentElement("beforebegin", div);       
     div.insertAdjacentElement("beforeend", quoteH2);
     div.insertAdjacentElement("beforeend", authorH6);   
     
